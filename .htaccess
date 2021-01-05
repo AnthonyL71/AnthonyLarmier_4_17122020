@@ -1,22 +1,11 @@
-# BEGIN Cache-Control Headers
-<ifmodule mod_headers.c>
- 
- <filesmatch "\\.(ico|jpe?g|png|gif|swf|gz|ttf)$">
- Header set Cache-Control "max-age=2592000"
- </filesmatch>
-
- <filesmatch "\\.(css)$">
- Header set Cache-Control "max-age=2592000"
- </filesmatch>
-
- <filesmatch "\\.(js)$">
- Header set Cache-Control "max-age=2592000"
- </filesmatch>
-
-<filesmatch "\\.(html|htm)$">
-Header set Cache-Control "max-age=7200"
-</filesmatch>
-
+<ifmodule mod_expires.c="">
+ExpiresActive on
+# exemples par type mime
+ExpiresByType image/jpg "access plus 2 years"
+ExpiresByType text/css "modification plus 2 years"
+# exemples par extension
+<FilesMatch ".(jpg|jpeg|png|gif|swf|js|css|png)$">
+Header set Cache-Control "max-age=604800, public"
+# 1 semaine max-age=604800
+# 1 an max-age=29030400
 </ifmodule>
-
-# END Cache-Control Headers
