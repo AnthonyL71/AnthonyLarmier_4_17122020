@@ -1,5 +1,5 @@
 <filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|bmp|svg|js|css|swf)$">
-        Header set Cache-Control "max-age=84600, public"
+        Header set Cache-Control "max-age=1084600, public"
 </filesMatch>
 ## EXPIRES HEADER CACHING ##
 <IfModule mod_expires.c>
